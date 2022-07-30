@@ -1,0 +1,148 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* header */
+.welcomeheader{
+  height: 100%;
+  text-align: center;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 75px;
+}
+
+.App-header {
+  background-color: #222;
+  height: auto;
+  color: white;
+  display: flex;
+  font-size: larger;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.App-intro {
+  font-size: 8px;
+  padding: 10px auto auto 10px;
+  /* background-color: aquamarine; */
+  height: 20px;
+  margin: auto 5px 5px auto;
+}
+
+.logoheader2{
+  margin-left: 10px;
+}
+
+@keyframes App-logo-spin {
+  from {transform: rotate(1800deg); }
+  to {  transform: rotate(0deg); }
+}
+
+
+/* botton base */
+
+.app-base{
+  background-color: #FA6864;
+  height: 89%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.main-box{
+  height: 356px;
+  width: 550px;
+  border-radius: 4px;
+}
+
+.quote-box{
+  background-color: white;
+  height: 285px;
+  width: 550px;
+  border-radius: 4px;
+  padding: 50px ;
+  padding-top: 40px;
+}
+
+
+.quote-container{
+  width: 450px;
+  height: auto;
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Raleway', sans-serif; 
+  font-size: 28px;
+  color: #FA6864;
+  line-height: 30px;
+  font-weight: 500;
+
+}
+.quotonquot{
+  height:25px;
+  width: auto;
+  margin-right: 0px;
+  
+}
+
+
+
+.by-container{
+
+  width: 450px;
+  display: flex;
+  text-align:right;
+  color: #FA6864;
+  justify-content: right;
+  align-items: right;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+
+}
+
+.by-box{
+  height: 60px;
+  width: 550px;
+  border-radius: 4px;
+}
+
+
+.quote-share-container{
+  background-color: rgb(203, 203, 218);
+  width: 450px;
+  height: 40px;
+  display: flex;
+}
+
+
+.footer-button{
+  height: 40px;
+  width: 40px;
+  background-color: #FA6864;
+  color: white;
+  margin-right: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+
+}
+
+.footer-button:hover{
+  background-color: #fa7672;
+}
+
+
+
