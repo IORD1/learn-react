@@ -9,37 +9,34 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      bgcolor: 'blue'
+      bgcolor: 'blue',
+      text : "pratham"
+
     }
   }
 
 
-  getdata(){
-    alert("yo");
-    
-    
-    this.setState({bgcolor: '#FA686'})  ;
-    alert(theme);
-    alert("done");
-    
-  }
-
-  onChange () {
-    alert("onchange speaking");
-
-    this.setState({bgcolor: 'green'})
-   
-  }
 
   func = () => {
-    alert('func speaking');
     theme= '#'+Math.floor(Math.random()*16777215).toString(16);
     this.setState({bgcolor: theme});
+    let test = 'app is great';
+
+    fetch("https://api.quotable.io/random")
+                  .then((res) => res.json())
+                  .then((json) => {console.log(alert('"' + json.author + '"'))})
+                  .then(res => { this.setState({text : res.author})});
+                  
+                
+    
+
+          
   }
+
 
   render() {
 
-    const { bgcolor } = this.state;
+    
 
     return (
 
@@ -66,8 +63,8 @@ class App extends Component {
                 <i class="fa fa-quote-left">
                   
                 </i>
-                <p className='quote'>
-                  Build you own dreams, or someone else will hire you to build theirs.
+                <p className='quote' id='quotep'>
+                    {this.state.text}
                 </p>
               </div>
               <div className='by-container'>
