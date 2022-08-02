@@ -2,17 +2,40 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import sharingan from './sharigan.png';
 import quotonquot from './qotonqot.svg';
+import $ from 'jquery';
 import './App.css';
-
+var theme = '#FA6864';
 class App extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      bgcolor: 'blue'
+    }
+  }
+
 
   getdata(){
     alert("yo");
-    // $getJSON("https://www.colr.org/json/colors/random/1", function(data) {})
+    
+    theme= '#'+Math.floor(Math.random()*16777215).toString(16);
+    this.setState({bgcolor: '#FA686'})  ;
+    alert(theme);
+    alert("done");
+    
+  }
+
+  onChange () {
+    alert("onchange speaking");
+    this.setState({bgcolor: 'green'})
+   
   }
 
   render() {
+
+    const { bgcolor } = this.state;
+
     return (
+
       <div className="App">
         <div className="App-header">
           <div className="logoheader">
@@ -29,7 +52,7 @@ class App extends Component {
         </p>
         </div>
 
-        <div className='app-base'  >
+        <div className='app-base' style={{backgroundColor: this.state.bgcolor}} >
           <div className='main-box'>
             <div className='quote-box'>
               <div className='quote-container'>
@@ -54,7 +77,7 @@ class App extends Component {
                 </a> 
                 
                 <div id='newq' className="footer-button-holder">
-                  <button className='footer-button' id='foot-button' onClick={this.getdata}>New quote</button>
+                  <button className='footer-button' id='foot-button' onClick={this.onChange}>New quote</button>
                 </div>
 
               </div>
