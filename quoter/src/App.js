@@ -17,7 +17,7 @@ class App extends Component {
   getdata(){
     alert("yo");
     
-    theme= '#'+Math.floor(Math.random()*16777215).toString(16);
+    
     this.setState({bgcolor: '#FA686'})  ;
     alert(theme);
     alert("done");
@@ -26,8 +26,15 @@ class App extends Component {
 
   onChange () {
     alert("onchange speaking");
+
     this.setState({bgcolor: 'green'})
    
+  }
+
+  func = () => {
+    alert('func speaking');
+    theme= '#'+Math.floor(Math.random()*16777215).toString(16);
+    this.setState({bgcolor: theme});
   }
 
   render() {
@@ -77,7 +84,7 @@ class App extends Component {
                 </a> 
                 
                 <div id='newq' className="footer-button-holder">
-                  <button className='footer-button' id='foot-button' onClick={this.onChange}>New quote</button>
+                  <button className='footer-button' id='foot-button' onClick={this.func}>New quote</button>
                 </div>
 
               </div>
