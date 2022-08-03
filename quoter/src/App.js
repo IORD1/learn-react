@@ -4,14 +4,16 @@ import sharingan from './sharigan.png';
 import quotonquot from './qotonqot.svg';
 import $ from 'jquery';
 import './App.css';
+
+
 var theme = '#FA6864';
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
       bgcolor: 'blue',
-      text : "pratham"
-
+      text : "pratham ingole",
+      test : ''
     }
   }
 
@@ -20,15 +22,28 @@ class App extends Component {
   func = () => {
     theme= '#'+Math.floor(Math.random()*16777215).toString(16);
     this.setState({bgcolor: theme});
-    let test = 'app is great';
+    this.setState({text : 'app is great'});
 
-    fetch("https://api.quotable.io/random")
-                  .then((res) => res.json())
-                  .then((json) => {console.log(alert('"' + json.author + '"'))})
-                  .then(res => { this.setState({text : res.author})});
-                  
-                
+    // fetch("https://api.quotable.io/random")
+    //               .then((res) => res.json())
+    //               .then((json) => {console.log(alert('"' + json.author + '"'))})
     
+    
+    const that = this;
+    fetch("https://api.quotable.io/random")
+      .then(function(response) {
+          return response.json();
+      })
+      .then(function(jsonData) {
+          return JSON.stringify(jsonData);
+      })
+      .then(function(jsonStr) {
+          that.setState({ 
+            text: jsonStr.valueOf("author")
+            
+          });
+          console.log(jsonStr);
+      });
 
           
   }
