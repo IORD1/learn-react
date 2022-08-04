@@ -61,22 +61,24 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 500ms;
 
 }
 
 .main-box{
-  height: 356px;
+  height: auto;
   width: 550px;
   border-radius: 4px;
 }
 
 .quote-box{
   background-color: white;
-  height: 285px;
+  height: auto  ;
   width: 550px;
   border-radius: 4px;
   padding: 50px ;
   padding-top: 40px;
+  transition: opacity 1s;
 }
 
 
@@ -92,15 +94,21 @@ a{
   color: #FA6864;
   line-height: 30px;
   font-weight: 500;
+  transition: 500ms;
+
 
 }
 .quotonquot{
   height:25px;
   width: auto;
-  margin-right: 0px;
+  margin-right: 5px;
+  transition: 500ms;
   
 }
 
+#quotep{
+  transition: opacity 1s;
+}
 
 
 .by-container{
@@ -123,7 +131,10 @@ a{
   height: 60px;
   width: 550px;
   border-radius: 4px;
+  transition: 500ms;
 }
+
+
 
 
 .quote-share-container{
@@ -144,6 +155,7 @@ a{
   justify-content: center;
   align-items: center;
   font-size: larger;
+  transition: 500ms;
 
 }
 
@@ -190,4 +202,23 @@ a{
 
 .by-box:a{
   text-decoration: none;
+}
+
+
+/* 
+expermient */
+
+
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }
