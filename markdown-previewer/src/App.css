@@ -3,6 +3,7 @@
   background-color: #87B5B5;
   height: 100vh;
   width: 100%;
+  overflow-y: scroll;
 }
 
 #mardkdown-cont{
@@ -15,7 +16,7 @@
 }
 
 #markdown-box{
-  height: 250px;
+  height: auto;
   width: 50%;
   background-color: #C0D8D8;
   margin: 10px auto 10px auto;
@@ -42,6 +43,39 @@
   margin-left: 5px;
 }
 
+#markdown-head button{
+  background-color: transparent;
+  color: black;
+  border: none;
+  margin: auto 5px auto auto  ;
+}
+
+#markdown-head button:hover{
+  color: #a5d8d8;
+  transition: 300ms;
+
+}
+
+#markdown-rest{
+  height: auto;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 0px;
+
+}
+
+#markdown-rest textarea{
+  height: 100%;
+  width: 100%;
+  background-color: #C0D8D8;
+  border: none;
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 14px;
+  outline: none;
+
+}
+
 #preview-cont{
   height: auto;
   width: 100%;
@@ -49,6 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top:  40px;
 }
 
 #preview-box{
@@ -78,5 +113,17 @@
 #preview-head p{
   margin-top: 15px;
   margin-left: 5px;
+
+}
+#preview-head button{
+  background-color: transparent;
+  color: black;
+  border: none;
+  margin: auto 5px auto auto  ;
+}
+
+#preview-head button:hover{
+  color: #a5d8d8;
+  transition: 300ms;
 
 }
