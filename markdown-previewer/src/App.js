@@ -21,8 +21,12 @@ class App extends Component {
         
   }
 
+  func2 = () => {
+    document.getElementById('content').innerHTML = window.marked.parse(document.getElementById('markdown').value); 
+  }
+
   componentDidMount(){
-    this.func();
+    this.func2();
   } 
 
 
@@ -43,7 +47,11 @@ class App extends Component {
             <button id="markdown-but"><i class="fa fa-expand"></i></button>
             </div>
             <div id='markdown-rest'>
-              <textarea id="markdown" onChange={this.func} >{this.state.initial}</textarea>
+              <textarea id="markdown" onChange={this.func2} >
+                
+              
+                 
+                 </textarea>
             </div>
 
           </div>

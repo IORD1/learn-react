@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import sharingan from './sharigan.png';
-import quotonquot from './qotonqot.svg';
-import $ from 'jquery';
 import './App.css';
 
 
