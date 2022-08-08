@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { useState } from "react";
 import './App.css';
 
 class App extends Component {
 
-  
+  onc = (event, source) => {
+    // Do something with event
+    console.log(event);
+    alert(event);
+
+    // Use the passed parameter
+    alert(source);
+  }
+
 
   func = () => {
     let aud1 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3");
     aud1.play();
-    
   }
 
   render() {
@@ -17,7 +24,7 @@ class App extends Component {
       <div className="App">
         <div id='box'>
           <div id='keys'>
-            <div id='q' className='buttons row1' onClick={this.func}>
+            <div id='q' className='buttons row1' onClick={(event) => onc(event, "1")}>
               Q
               </div>
             <div id='w' className='buttons row1'>W</div>
