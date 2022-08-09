@@ -33,9 +33,11 @@
 #panel{
   height: 100%;
   width: 40%;
-  background-color: chartreuse;
+  background-color: rgb(189, 216, 162);
   margin-right: 10px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons{
@@ -68,4 +70,48 @@
 
 .row3{
   margin-bottom: 30px;
+}
+
+.panel-mem{
+  background-color: #B3B3B3;
+  height: 25%;
+  width: 100;
+  border: 1px solid white;
+}
+
+#panel-cont{
+height: 80%;
+width: 90%;
+background-color: aquamarine;
+}
+
+#power-head{
+  background-color: #FFA73F;
+  color: black;
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 0px;
+}
+
+#power-box{
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+#power{
+  background-color: black;
+  width: 48px;
+  height: 21px;
+}
+
+#power-slider{
+  background-color: #3378FA;
+  height: 19px;
+  width: 23px;
+  margin: 1px auto auto 1px;
+  transition: 500ms;
 }
