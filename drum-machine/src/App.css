@@ -33,7 +33,6 @@
 #panel{
   height: 100%;
   width: 40%;
-  background-color: rgb(189, 216, 162);
   margin-right: 10px;
   display: flex;
   justify-content: center;
@@ -62,31 +61,31 @@
   background-color: #8d8c8c;
 }
 
+.buttons:active{
+  background-color: rgb(220, 173, 32);
+}
 
 
 .row1{
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .row3{
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .panel-mem{
   background-color: #B3B3B3;
   height: 25%;
   width: 100;
-  border: 1px solid white;
 }
 
 #panel-cont{
 height: 80%;
 width: 90%;
-background-color: aquamarine;
 }
 
 #power-head{
-  background-color: #FFA73F;
   color: black;
   font-family: 'Russo One', sans-serif;
   font-weight: 400;
@@ -95,7 +94,6 @@ background-color: aquamarine;
 }
 
 #power-box{
-  background-color: azure;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,4 +112,69 @@ background-color: aquamarine;
   width: 23px;
   margin: 1px auto auto 1px;
   transition: 500ms;
+  cursor: pointer;
+}
+
+#display-cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#display{
+  background-color: #808080;
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 0px;
+}
+
+#slider-cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#slider{
+  width: 230px;
+  height: 2px;
+  cursor: pointer ;
+}
+
+
+#switch-head{
+  color: black;
+  font-family: 'Russo One', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 0px;
+}
+
+#switch-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+#switch{
+  background-color: black;
+  width: 48px;
+  height: 21px;
+}
+
+#switch-slider{
+  background-color: #3378FA;
+  height: 19px;
+  width: 23px;
+  margin: 1px auto auto 1px;
+  transition: 500ms;
+  cursor: pointer;
 }
