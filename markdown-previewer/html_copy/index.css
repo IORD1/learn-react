@@ -148,3 +148,22 @@ body{
     max-height: 300px;
   }
   
+  .by-box{
+    height: 60px;
+    width: 550px;
+    border-radius: 4px;
+    transition: 500ms;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 11px;
+  
+  }
+  .by-footer{
+    font-weight: 300;
+    margin-right: 3px;
+  }
+  
+  .by-box:a{
+    text-decoration: none;
+  }
+  

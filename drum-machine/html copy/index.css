@@ -39,7 +39,7 @@
     align-items: center;
   }
   
-  .buttons{
+  .drum-pad{
     background-color: #808080;
     color: black;
     font-family: 'Russo One', sans-serif;
@@ -56,12 +56,12 @@
     
   }
   
-  .buttons:hover{
+  .drum-pad:hover{
     cursor:pointer;
     background-color: #8d8c8c;
   }
   
-  .buttons:active{
+  .drum-pad:active{
     background-color: rgb(220, 173, 32);
   }
   
@@ -213,7 +213,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(207, 144, 144);
+    background-color: #b3d3be;
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -232,7 +232,7 @@
   }
   
   input:checked + .slider {
-    background-color: #45ba6e;
+    background-color: rgb(207, 144, 144);
   }
   
   input:focus + .slider {
@@ -260,4 +260,22 @@
   /* idfdfohdfaohashdfo */
   
   
+  .by-box{
+    height: 60px;
+    width: 550px;
+    border-radius: 4px;
+    transition: 500ms;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 11px;
+  
+  }
+  .by-footer{
+    font-weight: 300;
+    margin-right: 3px;
+  }
+  
+  .by-box:a{
+    text-decoration: none;
+  }
   

@@ -21,7 +21,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+
     <!-- icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -32,19 +33,20 @@
     <div class="App">
         <div id='drum-machine'>
           <div id='keys'>
-            <div id='q' class='buttons row1' onClick='func(1)' >
+            <div id='Q1' class='drum-pad row1' onClick='func(1)' >
               Q
+              <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" id="Q" class="clip"></audio>
               </div>
-            <div id='w' class='buttons row1' onClick='func(2)'>W</div>
-            <div id='e' class='buttons row1'  onClick='func(3)'>E</div>
+            <div id='W1' class='drum-pad row1' onClick='func(2)'>W<audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" id="W" class="clip"></audio></div>
+            <div id='E1' class='drum-pad row1'  onClick='func(3)'>E<audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" id="E" class="clip"></audio></div>
 
-            <div id='a' class='buttons row2'  onClick='func(4)'>A</div>
-            <div id='s' class='buttons row2'  onClick='func(5)'>S</div>
-            <div id='d' class='buttons row2'  onClick='func(6)'>D</div>
+            <div id='A1' class='drum-pad row2'  onClick='func(4)'>A<audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" id="A" class="clip"></audio></div>
+            <div id='S1' class='drum-pad row2'  onClick='func(5)'>S<audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" id="S" class="clip"></audio></div>
+            <div id='D1' class='drum-pad row2'  onClick='func(6)'>D<audio src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" id="D" class="clip"></audio></div>
 
-            <div id='z' class='buttons row3'  onClick='func(7)'>Z</div>
-            <div id='x' class='buttons row3'  onClick='func(8)'>X</div>
-            <div id='c' class='buttons row3'  onClick='func(9)'>C</div>
+            <div id='Z1' class='drum-pad row3'  onClick='func(7)'>Z<audio src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" id="Z" class="clip"></audio></div>
+            <div id='X1' class='drum-pad row3'  onClick='func(8)'>X<audio src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" id="X" class="clip"></audio></div>
+            <div id='C1' class='drum-pad row3'  onClick='func(9)'>C<audio src="https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3" id="C" class="clip"></audio></div>
 
           </div>
           <div id='panel'>
@@ -83,6 +85,11 @@
             </div>
           </div>
         </div>
+        
+      </div>
+      <div class='by-box'>
+        <p class="by-footer">by </p>
+        <p class='by-pratham'>pratham-_-  Find here same project in React : <a href="https://github.com/IORD1" target="_blank">Github</a></p>
       </div>
 
 

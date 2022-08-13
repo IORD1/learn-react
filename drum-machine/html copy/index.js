@@ -1,15 +1,17 @@
-var ispower = 1;
+var ispower = 0;
 var isswitch = 0;
 var vol = 1;
 
 
+
+
 function power(){
-    if(ispower == 1){
-        document.getElementById('display').innerHTML = 'Power : On';
-        ispower = 0;
-      }else{
+    if(ispower == 0){
         document.getElementById('display').innerHTML = 'Power : Off';
         ispower = 1;
+      }else{
+        document.getElementById('display').innerHTML = 'Power : On';
+        ispower = 0;
       } 
 }
 
@@ -51,32 +53,41 @@ function func(key){
         aud8.volume = vol;
         aud9.volume = vol;
         if(key == 1){
-            document.getElementById('display').innerHTML = 'Heater 1';
-          aud.play();
+          var audio1 = document.getElementById('Q');
+          document.getElementById('display').innerHTML = 'Heater 1';
+          audio1.play();
         }else if(key == 2){
-            document.getElementById('display').innerHTML = 'Heater 2';
-          aud.play();
+          var audio2 = document.getElementById('W');
+          document.getElementById('display').innerHTML = 'Heater 2';
+          audio2.play();
         }else if(key == 3){
-            document.getElementById('display').innerHTML = 'Heater 3';
-          aud.play();
+          var audio3 = document.getElementById('E');
+          document.getElementById('display').innerHTML = 'Heater 3';
+          audio3.play();
         }else if(key == 4){
-            document.getElementById('display').innerHTML = 'Heater 4';
-          aud4.play();
+          var audio4 = document.getElementById('A');
+          document.getElementById('display').innerHTML = 'Heater 4';
+          audio4.play();
         }else if(key == 5){
-            document.getElementById('display').innerHTML = 'Clap';
-          aud5.play();
+          var audio5 = document.getElementById('S');
+          document.getElementById('display').innerHTML = 'Clap';
+          audio5.play();
         }else if(key == 6){
-            document.getElementById('display').innerHTML = 'Open HH';
-          aud6.play();
+          var audio6 = document.getElementById('D');
+          document.getElementById('display').innerHTML = 'Open HH';
+          audio6.play();
         }else if(key == 7){
-            document.getElementById('display').innerHTML = 'Kick n" Hat';
-          aud7.play();
+          var audio7 = document.getElementById('Z');
+          document.getElementById('display').innerHTML = "Kick n' Hat";
+          audio7.play();
         }else if(key == 8){
-            document.getElementById('display').innerHTML = 'Kick';
-          aud8.play();
+          var audio8 = document.getElementById('X');
+          document.getElementById('display').innerHTML = 'Kick';
+          audio8.play();
         }else if(key == 9){
-            document.getElementById('display').innerHTML = 'Closed HH';  
-          aud9.play();
+          var audio9 = document.getElementById('C');
+          document.getElementById('display').innerHTML = 'Closed HH';
+          audio9.play();
         }
 
       }
@@ -132,3 +143,26 @@ function func(key){
       }
     }
   }
+
+
+  document.addEventListener('keypress', function(event){
+    if(event.key == 'Q'){
+      func(1);
+    }else if(event.key == 'W'){
+      func(2);
+    }else if(event.key == 'E'){
+      func(3);
+    }else if(event.key == 'A'){
+      func(4);
+    }else if(event.key == 'S')  {
+      func(5);
+    }else if(event.key == 'D'){
+      func(6);
+    }else if(event.key == 'Z'){
+      func(7);
+    }else if(event.key == 'X'){
+      func(8);
+    }else if(event.key == 'C'){
+      func(9);
+    }
+  });
