@@ -1,6 +1,6 @@
 .App{
   text-align: center;
-  background-color: #c8b6da;
+  background-color: #78747c;
   height: 100vh;
   width: 100% ;
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 #box{
-  height: 316px;
+  height: 335px;
   width: 660px;
   background-color: #B3B3B3;
   /* border-style: solid; */
@@ -255,4 +255,9 @@ input:checked + .slider:before {
   border-radius: 34px;
 }
 
+#switch-circle{
+  background-color: #848dc7;
+}
 /* idfdfohdfaohashdfo */
+
+

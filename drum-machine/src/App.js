@@ -95,32 +95,32 @@ class App extends Component {
         aud8.volume = this.state.vol;
         aud9.volume = this.state.vol;
         if(key == 1 || event.key == 'Enter'){
-          this.setState({display : "Heater 1"});
+          this.setState({display : "Chord 1"});
           
           aud.play();
         }else if(key == 2){
-          this.setState({display : "Heater 2"});
+          this.setState({display : "Chord 2"});
           aud.play();
         }else if(key == 3){
-          this.setState({display : "Heater 3"});
+          this.setState({display : "Chord 3"});
           aud.play();
         }else if(key == 4){
-          this.setState({display : "Heater 4"});
+          this.setState({display : "Shake 4"});
           aud4.play();
         }else if(key == 5){
-          this.setState({display : "Clap"});
+          this.setState({display : "Open HH"});
           aud5.play();
         }else if(key == 6){
-          this.setState({display : "Open HH"});
+          this.setState({display : "Closed HH"});
           aud6.play();
         }else if(key == 7){
-          this.setState({display : "Kick n' Hat"});
+          this.setState({display : "Punchy Kick"});
           aud7.play();
         }else if(key == 8){
-          this.setState({display : "Kick"});
+          this.setState({display : "Side Stick"});
           aud8.play();
         }else if(key == 9){
-          this.setState({display : "Closed HH"});  
+          this.setState({display : "Snare"});  
           aud9.play();
         }
 
@@ -287,11 +287,15 @@ class App extends Component {
                   <p>Bank</p>
                 </div>
                 <div id='switch-box'>
-                  <div id='switch'>
+                  {/* <div id='switch'>
                     <div id='switch-slider' onClick={this.switch} style={{ margin : this.state.switch }}>
 
                     </div>
-                  </div>
+                  </div> */}
+                  <label class="switch">
+                    <input type="checkbox" onClick={this.switch} id='switch-check'></input>
+                      <span class="slider round" id='switch-circle'></span>
+                  </label>
                 </div>
               </div>
             </div>
