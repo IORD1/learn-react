@@ -9,10 +9,10 @@ class App extends Component {
       power: "1px auto auto 1px",
       ispower : 1,
       switch : "1px auto auto 1px",
-      isswitch : 1,
+      isswitch : 0,
       display : "",
       bgc : "",
-      vol : 1
+      vol : 1,
 
     }
 
@@ -22,57 +22,110 @@ class App extends Component {
 
 
 
-  func = (key) => {
-    let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-" + key + ".mp3");
-    aud.play();
-    if(this.state.ispower == 1){
-      this.setState({display : "Power : Off"});
-    }else{
+  func = (key ) => {
+   
+    if(this.state.isswitch == 0){
 
-      let aud4 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3");
-      let aud5 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3");
-      let aud6 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3");
-      let aud7 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3");
-      let aud8 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3");
-      let aud9 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3");
-      aud.volume = this.state.vol;
-      aud4.volume = this.state.vol;
-      aud5.volume = this.state.vol;
-      aud6.volume = this.state.vol;
-      aud7.volume = this.state.vol;
-      aud8.volume = this.state.vol;
-      aud9.volume = this.state.vol;
-      if(key == 1 || event.key == 'Enter'){
-        this.setState({display : "Heater 1"});
+      if(this.state.ispower == 1){
+        this.setState({display : "Power : Off"});
+      }else{
         
-        aud.play();
-      }else if(key == 2){
-        this.setState({display : "Heater 2"});
-        aud.play();
-      }else if(key == 3){
-        this.setState({display : "Heater 3"});
-        aud.play();
-      }else if(key == 4){
-        this.setState({display : "Heater 4"});
-        aud4.play();
-      }else if(key == 5){
-        this.setState({display : "Clap"});
-        aud5.play();
-      }else if(key == 6){
-        this.setState({display : "Open HH"});
-        aud6.play();
-      }else if(key == 7){
-        this.setState({display : "Kick n' Hat"});
-        aud7.play();
-      }else if(key == 8){
-        this.setState({display : "Kick"});
-        aud8.play();
-      }else if(key == 9){
-        this.setState({display : "Closed HH"});  
-        aud9.play();
-      }
+        let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-" + key + ".mp3");
+        let aud4 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3");
+        let aud5 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3");
+        let aud6 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3");
+        let aud7 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3");
+        let aud8 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3");
+        let aud9 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3");
+        aud.volume = this.state.vol;
+        aud4.volume = this.state.vol;
+        aud5.volume = this.state.vol;
+        aud6.volume = this.state.vol;
+        aud7.volume = this.state.vol;
+        aud8.volume = this.state.vol;
+        aud9.volume = this.state.vol;
+        if(key == 1 || event.key == 'Enter'){
+          this.setState({display : "Heater 1"});
+          
+          aud.play();
+        }else if(key == 2){
+          this.setState({display : "Heater 2"});
+          aud.play();
+        }else if(key == 3){
+          this.setState({display : "Heater 3"});
+          aud.play();
+        }else if(key == 4){
+          this.setState({display : "Heater 4"});
+          aud4.play();
+        }else if(key == 5){
+          this.setState({display : "Clap"});
+          aud5.play();
+        }else if(key == 6){
+          this.setState({display : "Open HH"});
+          aud6.play();
+        }else if(key == 7){
+          this.setState({display : "Kick n' Hat"});
+          aud7.play();
+        }else if(key == 8){
+          this.setState({display : "Kick"});
+          aud8.play();
+        }else if(key == 9){
+          this.setState({display : "Closed HH"});  
+          aud9.play();
+        }
 
-   }
+      }
+    }else{
+      if(this.state.ispower == 1){
+        this.setState({display : "Power : Off"});
+      }else{
+        
+        let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Chord_" + key + ".mp3");
+        let aud4 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3");
+        let aud5 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3");
+        let aud6 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3");
+        let aud7 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3");
+        let aud8 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3");
+        let aud9 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3");
+        aud.volume = this.state.vol;
+        aud4.volume = this.state.vol;
+        aud5.volume = this.state.vol;
+        aud6.volume = this.state.vol;
+        aud7.volume = this.state.vol;
+        aud8.volume = this.state.vol;
+        aud9.volume = this.state.vol;
+        if(key == 1 || event.key == 'Enter'){
+          this.setState({display : "Heater 1"});
+          
+          aud.play();
+        }else if(key == 2){
+          this.setState({display : "Heater 2"});
+          aud.play();
+        }else if(key == 3){
+          this.setState({display : "Heater 3"});
+          aud.play();
+        }else if(key == 4){
+          this.setState({display : "Heater 4"});
+          aud4.play();
+        }else if(key == 5){
+          this.setState({display : "Clap"});
+          aud5.play();
+        }else if(key == 6){
+          this.setState({display : "Open HH"});
+          aud6.play();
+        }else if(key == 7){
+          this.setState({display : "Kick n' Hat"});
+          aud7.play();
+        }else if(key == 8){
+          this.setState({display : "Kick"});
+          aud8.play();
+        }else if(key == 9){
+          this.setState({display : "Closed HH"});  
+          aud9.play();
+        }
+
+      }
+    }
   }
 
 
@@ -89,18 +142,7 @@ class App extends Component {
     }
   }
 
-  switch = () => {
-    this.func(1);
-    if(this.state.isswitch == 1){
-      this.setState({display : "Smooth Paino Kit"});
-      this.setState({ switch: "1px 1px auto auto"});
-      this.setState({isswitch : 0});
-    }else{
-      this.setState({display : "Heater Kit"});
-      this.setState({switch : "1px auto auto 1px"});
-      this.setState({isswitch : 1});
-    }
-  }
+
 
   setvol = () => {
     this.setState({display : "Vol : " + document.getElementById('slider').value * 10})
@@ -109,15 +151,88 @@ class App extends Component {
 
 
   componentDidMount() {
-    window.addEventListener('keyup', function(event) {
-      if (event.key === 'q') {
-        alert('q was pressed!');
-      }
-    });
-    this.func(1);
+    alert(this.state.isswitch)
+    if(this.state.isswitch == 0){
+      window.addEventListener('keyup', function(event) {
+        if (event.key === 'q') {
+          let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-" + 1 + ".mp3");
+          aud.play();
+        }else if(event.key === 'w'){
+          let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-" + 2 + ".mp3");
+          aud.play();
+        }else if(event.key === 'e'){
+          let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-" + 3 + ".mp3");
+          aud.play();
+        }else if(event.key === 'a'){
+          let aud4 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3");
+          aud4.play();
+        }else if(event.key === 's'){
+          let aud5 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3");
+          aud5.play();
+        }else if(event.key === 'd'){
+          let aud6 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3");
+          aud6.play();
+        }else if(event.key === 'z'){
+          let aud7 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3");
+          aud7.play();
+        }else if(event.key === 'x'){
+          let aud8 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3");
+          aud8.play();
+        }else if(event.key === 'c'){
+          let aud9 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3");
+          aud9.play();
+        }
+      });
+    }else if(this.state.isswitch == 1){
+      this.alert('insider piano');
+      window.addEventListener('keyup', function(event) {
+        if (event.key === 'q') {
+          let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Chord_" + 1 + ".mp3");
+          aud.play();
+        }else if(event.key === 'w'){
+          let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Chord_" + 2 + ".mp3");
+          aud.play();
+        }else if(event.key === 'e'){
+          let aud = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Chord_" + 3 + ".mp3");
+          aud.play();
+        }else if(event.key === 'a'){
+          let aud4 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3");
+          aud4.play();
+        }else if(event.key === 's'){
+          let aud5 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3");
+          aud5.play();
+        }else if(event.key === 'd'){
+          let aud6 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3");
+          aud6.play();
+        }else if(event.key === 'z'){
+          let aud7 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3");
+          aud7.play();
+        }else if(event.key === 'x'){
+          let aud8 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3");
+          aud8.play();
+        }else if(event.key === 'c'){
+          let aud9 = new Audio("https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3");
+          aud9.play();
+        }
+      });
+    }
 
   }
 
+  switch = () => {
+    if(this.state.isswitch == 0){
+      this.setState({display : "Smooth Paino Kit"});
+      this.setState({ switch: "1px 1px auto auto"});
+      this.setState({isswitch : 1});
+      this.componentDidMount();
+    }else if(this.state.isswitch == 1){
+      this.setState({display : "Heater Kit"});
+      this.setState({switch : "1px auto auto 1px"});
+      this.setState({isswitch : 0});
+      this.componentDidMount();
+    }
+  }
+  
   
   render() {
 
@@ -149,11 +264,15 @@ class App extends Component {
                   <p>Power</p>
                 </div>
                 <div id='power-box'>
-                  <div id='power'>
-                    <div id='power-slider' onClick={this.power} style={{ margin : this.state.power }}>
+                  {/* <div id='power' onClick={this.power} >
+                    <div id='power-slider' style={{ margin : this.state.power }}>
 
                     </div>
-                  </div>
+                  </div> */}
+                  <label class="switch">
+                    <input type="checkbox" onClick={this.power}></input>
+                      <span class="slider round"></span>
+                  </label>
                 </div>
               </div>
               <div id='display-cont' className='panel-mem'>
@@ -172,12 +291,10 @@ class App extends Component {
                     <div id='switch-slider' onClick={this.switch} style={{ margin : this.state.switch }}>
 
                     </div>
-                    
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
