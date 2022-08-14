@@ -1,3 +1,10 @@
+body{
+
+  overflow: hidden;
+}
+
+
+
 .App {
   text-align: center;
   background-color: #C2C2D6;
@@ -7,7 +14,10 @@
   justify-content: center;
   align-items: center;
   padding-left: 5px;
-  padding-left: 5px;
+  padding-right: 5px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 20px;
+  color: white;
 }
 
 
@@ -19,33 +29,102 @@
 }
 
 #display-box{
-  width: 100%;
+  width: 95%;
   height: 14%;
-  background-color: #C2C2D6;
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 5px;
 
 }
 
 #buttons{
   min-width: max-content;
   height: 85%;
-  background-color: blanchedalmond;
   margin: auto 5px 5px 5px;
 }
 
 .button-row{
   width: 100%;
   height: 20%;
-  background-color: aqua;
   display: flex;
 }
 
 .btn{
   width: 25%;
   height: 100%;
-  background-color: beige;
+  background-color: #4D4D4D;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover{
+  border: 1px solid white;
+  color:  black ;
 }
 
 #clear{
-  width: 48%;
+  width: 50%;
+  margin-left: 1px;
+  background-color: #AC3939;
+}
+
+#d{
+  height: 40%;
+}
+
+#d-left{
+  height: 100%;
+  width: 75%;
+  margin-left: 0px;
+}
+
+#d-right{
+  height: 100%;
+  width: 25%;
+}
+
+#equals{
+  height: 100%;
+  width: 97%;
+  background-color: #004466;
+}
+
+#e{
+  height: 50%;
+}
+
+.btn2{
+  width: 33.33%;
+}
+
+#f{
+  height: 50%;
+}
+
+#zero{
+  width: 67.6%;
+}
+
+#decimal{
+  width: 33.33%;
+}
+ 
+.btn3{
+  background-color:  #666666;
+}
+
+#result{
+  height: 50%;
+  width: 100%;
+  text-align: right;
+  color: #FFA73F;
+}
+
+#display{
+  height: 50%;
+  width: 100%;
+  text-align: right;
+  font-size: 29px;
 }
