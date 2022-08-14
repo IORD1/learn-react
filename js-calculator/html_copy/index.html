@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Turret+Road&display=swap" rel="stylesheet">  <title>React App</title>
+
+
+</head>
+
+<body>  
+    <div class="App">
+        <div id='cal-box'>
+          <div id='display-box'>
+            <div id='result'>
+            </div>
+            <div id='display'>
+            </div>
+          </div>
+          <div id='buttons'>
+            <div id='a' class='button-row'>
+
+              <div id='clear' class='btn'   onClick='func("a")'>
+                AC
+              </div>
+              <div id='divide' class='btn btn3'  onClick='func("/")'>
+                /
+              </div>
+              <div id='multiply' class='btn btn3'  onClick='func("*")'>
+                *
+              </div>
+
+            </div>
+            <div id='b' class='button-row'>
+
+              <div id='seven' class='btn'  onClick='func("7")'>
+                7
+              </div>
+              <div id='eight' class='btn'  onClick='func("8")'>
+                8
+              </div>
+              <div id='nine' class='btn'  onClick='func("9")'>
+                9
+              </div>
+              <div id='subtract' class='btn btn3' onClick='func("-")'>
+                -
+              </div>
+
+            </div>
+            <div id='c' class='button-row'>
+
+              <div id='four' class='btn'  onClick='func("4")'>
+                4
+              </div>
+              <div id='five' class='btn'   onClick='func("5")'>
+                5
+              </div>
+              <div id='six' class='btn'   onClick='func("6")'>
+                6
+              </div>
+              <div id='add' class='btn btn3'   onClick='func("+")'>
+                +
+              </div>
+
+            </div>
+            <div id='d' class='button-row'>
+              <div id='d-left'>
+                <div id='e' class='button-row'>
+                  <div id='one' class='btn btn2'  onClick='func("1")'>
+                    1
+                  </div>
+                  <div id='two' class='btn btn2'   onClick='func("2")'>
+                    2
+                  </div>
+                  <div id='three' class='btn btn2'  onClick='func("3")'>
+                    3
+                  </div>
+                </div>
+                <div id='f' class='button-row'>
+                  <div id='zero' class='btn'  onClick='func("0")'>
+                    0
+                  </div>
+                  <div id='decimal' class='btn'  onClick='func(".")'>
+                    .
+                  </div>
+                  
+                </div>
+              </div>
+              <div id='d-right'>
+                <div id='equals' class='btn'   onClick='func("=")'>
+                  =
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+  
+</body>
+<script src="index.js"></script>
+</html>
