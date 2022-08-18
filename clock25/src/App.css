@@ -82,7 +82,7 @@
   border-radius: 50px;
 }
 
-#main-head{
+#timer-label{
   font-size: 30px;
   color: white;
   display: flex;
@@ -93,7 +93,7 @@
 
 }
 
-#main-time{
+#time-left{
   height: 70%;
   width: 100%;
   font-size: 80px;
@@ -115,7 +115,7 @@
 .buttons{
   height: 100%;
   width: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
   color: white;
   display: flex;
   justify-content: center;
@@ -124,6 +124,11 @@
 .buttons span{
   font-size: 34px;
   cursor: pointer;
+}
+
+
+#play_pause-icon{
+  font-size: 60px;
 }
 
 #by-box{
