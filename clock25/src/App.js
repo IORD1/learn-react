@@ -3,6 +3,40 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      min : 25,
+      sec : "00",
+      blen : 5,
+      mlen : 25
+    }
+  }
+
+  bdec = () => {
+    if(this.state.blen != 0){
+      this.setState({blen : this.state.blen - 1});
+    }
+  }
+
+  binc = () => {
+    if(this.state.blen != 60){
+      this.setState({blen : this.state.blen + 1});
+    }
+  }
+
+  mdec = () => {
+    if(this.state.mlen != 0){
+      this.setState({mlen : this.state.mlen - 1});
+    }
+  }
+
+  minc = () => {
+    if(this.state.mlen != 60){
+      this.setState({mlen : this.state.mlen + 1});
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,17 +48,17 @@ class App extends Component {
             <div id='left-edit'>
               <div id='break-label' className='edit-up-down'>Break Length</div>
                 <div id='left-edit-down' className='edit-up-down'>
-                  <div id='break-decrement' className='arrows'><span class="material-symbols-outlined">arrow_downward</span></div>
-                  <div id='break-length' className='arrows'>5</div>
-                  <div id='break-increment'className='arrows'><span class="material-symbols-outlined">arrow_upward</span></div>
+                  <div id='break-decrement' className='arrows' onClick={this.bdec}><span class="material-symbols-outlined">arrow_downward</span></div>
+                  <div id='break-length' className='arrows'>{this.state.blen}</div>
+                  <div id='break-increment'className='arrows' onClick={this.binc}><span class="material-symbols-outlined">arrow_upward</span></div>
                 </div>
             </div>
             <div id='right-edit'>
               <div id='session-label' className='edit-up-down'>Session Length</div>
                 <div id='right-edit-down' className='edit-up-down'>
-                  <div id='session-decrement' className='arrows'><span class="material-symbols-outlined">arrow_downward</span></div>
-                  <div id='session-length' className='arrows'>25</div>
-                  <div id='session-increment'className='arrows'><span class="material-symbols-outlined">arrow_upward</span></div>
+                  <div id='session-decrement' className='arrows' onClick={this.mdec}><span class="material-symbols-outlined">arrow_downward</span></div>
+                  <div id='session-length' className='arrows'>{this.state.mlen}</div>
+                  <div id='session-increment'className='arrows' onClick={this.minc}><span class="material-symbols-outlined">arrow_upward</span></div>
               </div>
             </div>
           </div>
@@ -34,7 +68,7 @@ class App extends Component {
                 Session
               </div>
               <div id='time-left'>
-                25:00
+                {this.state.min}:{this.state.sec}
               </div>
             </div>
 
