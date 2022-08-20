@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {useEffect} from 'react';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       min : 25,
-      sec : "00",
+      sec : 59,
       blen : 5,
       mlen : 25,
       delayInMilliseconds : 1000
     }
-  }componentDidMount() {
-    this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
   }
-  componentWillUnmount() {
-    clearInterval(this.interval);
+
+ timeout() {
+    return new Promise( res => setTimeout(res, 1000) );
   }
 
   bdec = () => {
@@ -38,7 +37,7 @@ class App extends Component {
       this.setState({mlen : this.state.mlen - 1});
     }
     if(this.state.min != 0){
-      this.setState({min : this.state.mlen});
+      this.setState({min : this.state.mlen - 1});
     }
   }
 
@@ -51,40 +50,18 @@ class App extends Component {
     }
   }
 
-   //1 second
+  settime=()=>{
+    this.setState({sec : this.state.sec - 1});
 
+  }
+  
   start = () => {
     while(this.state.sec != 0){
-      alert()
-      if(this.state.sec == '00'){
-        this.setState({sec : 59})
-        this.setState({min : this.state.min-1});
-      }else{
-          alert()
-          this.setState({sec : this.state.sec -1})
-          setTimeout(function() {
-          }, this.state.delayInMilliseconds);
-          
-        }
-      
+      setTimeout(this.settime(), 1000);
     }
+ 
   }
 
-
-
-
-  // componentDidMount(){
-  //   if(this.state.sec == '00'){
-  //     this.setState({sec : 59 });
-  //   }else{
-  //     alert();
-  //     this.interval = setInterval(() => this.setState({ sec: this.state.sec -1 }), 1000);
-  //   }
-    
-  // }
-  // componentWillUnmount(){
-  //   clearInterval(this.interval);
-  // }
 
   render() {
     return (
