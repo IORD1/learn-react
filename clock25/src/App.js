@@ -10,7 +10,9 @@ class App extends Component {
       sec : "00",
       blen : 5,
       mlen : 25,
-      power: 0
+      power: 0,
+      break : 0,
+      display: 'Session'
     }
   }
 
@@ -19,7 +21,7 @@ class App extends Component {
   }
 
   bdec = () => {
-    if(this.state.blen != 0){
+    if(this.state.blen != 1){
       this.setState({blen : this.state.blen - 1});
     }
     
@@ -33,29 +35,48 @@ class App extends Component {
   }
 
   mdec = () => {
-    if(this.state.mlen != 0){
-      this.setState({mlen : this.state.mlen - 1});
-    }
-    if(this.state.min != 0){
-      this.setState({min : this.state.mlen - 1});
+    if(this.state.power == 1){
+      if(this.state.mlen != 1){
+        this.setState({mlen : this.state.mlen - 1});
+      }
+    }else{
+      if(this.state.mlen != 1){
+        this.setState({mlen : this.state.mlen - 1});
+      }
+      if(this.state.min != 1){
+        this.setState({min : this.state.mlen - 1});
+      }
     }
   }
 
   minc = () => {
-    if(this.state.mlen != 60){
-      this.setState({mlen : this.state.mlen + 1});
-    }
-    if(this.state.min != 60){
-      this.setState({min : this.state.mlen + 1});
+    if(this.state.power == 1){
+      if(this.state.mlen != 60){
+        this.setState({mlen : this.state.mlen + 1});
+      }
+    }else{
+      if(this.state.mlen != 60){
+        this.setState({mlen : this.state.mlen + 1});
+      }
+      if(this.state.min != 60){
+        this.setState({min : this.state.mlen + 1});
+      }
     }
   }
 
   onpower=()=>{
-    this.setState({power : 1});
+    if(this.state.power == 1){
+    this.setState({power : 0})
+    }else{
+      this.setState({power : 1});
+    }
 
   }
 
   checker=()=>{
+    if(this.state.sec == 10){
+      return true;
+    }
     if(this.state.sec[0] == 0){
       return true;
     }
@@ -65,8 +86,28 @@ class App extends Component {
   start = () => {
     if(this.state.power == 1){
       if(this.state.sec == '00'){
-        this.setState({min : this.state.min - 1});
-        this.setState({sec : 59});
+        if(this.state.min == 0 && this.state.sec == 0){
+          if(this.state.break == 0){
+            this.setState({min : this.state.blen - 1});
+            this.setState({sec : 59 });
+            this.setState({break : 1});
+            this.setState({display: 'Break'})
+            var audio1 = document.getElementById('beep');
+            audio1.play();
+          }else if(this.state.break == 1){
+            this.setState({min : this.state.mlen});
+            this.setState({sec : '00' });
+            this.setState({break : 0});
+            this.setState({display: 'Session'})
+            var audio1 = document.getElementById('beep');
+            audio1.play();
+          }
+          
+        }else{
+          this.setState({min : this.state.min - 1});
+          this.setState({sec : 59});
+        }
+        
       }else if(this.state.sec != 0){
         if(this.checker()){
           this.setState({sec : "0" + (this.state.sec - 1)});
@@ -74,6 +115,7 @@ class App extends Component {
           this.setState({sec : this.state.sec - 1});
         }
       }
+
     }
  
   }
@@ -81,12 +123,13 @@ class App extends Component {
   restart = () => {
     this.setState({sec : '00'});
     this.setState({min : this.state.mlen});
+    this.setState({power : 0})
   }
 
-  // componentDidMount() {
-  //   this.interval = setInterval(() => this.start(), 1000);
+  componentDidMount() {
+    this.interval = setInterval(() => this.start(), 1000);
     
-  // }
+  }
   // () => this.setState({ sec: this.state.sec - 1 })
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -120,7 +163,7 @@ class App extends Component {
           <div id='main'>
             <div id='main-box'>
               <div id='timer-label'>
-                Session
+                {this.state.display}
               </div>
               <div id='time-left'>
                 {this.state.min}:{this.state.sec}
@@ -136,6 +179,7 @@ class App extends Component {
           Designed and Coded by Pratham-_-
           </div>
         </div>
+        <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
       </div>
     );
   }
