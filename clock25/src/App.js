@@ -7,10 +7,10 @@ class App extends Component {
     super(props)
     this.state = {
       min : 25,
-      sec : 59,
+      sec : "00",
       blen : 5,
       mlen : 25,
-      delayInMilliseconds : 1000
+      power: 0
     }
   }
 
@@ -50,18 +50,47 @@ class App extends Component {
     }
   }
 
-  settime=()=>{
-    this.setState({sec : this.state.sec - 1});
+  onpower=()=>{
+    this.setState({power : 1});
 
+  }
+
+  checker=()=>{
+    if(this.state.sec[0] == 0){
+      return true;
+    }
+    return String(Math.abs(this.state.sec)).charAt(0) == this.state.sec;
   }
   
   start = () => {
-    while(this.state.sec != 0){
-      setTimeout(this.settime(), 1000);
+    if(this.state.power == 1){
+      if(this.state.sec == '00'){
+        this.setState({min : this.state.min - 1});
+        this.setState({sec : 59});
+      }else if(this.state.sec != 0){
+        if(this.checker()){
+          this.setState({sec : "0" + (this.state.sec - 1)});
+        }else{
+          this.setState({sec : this.state.sec - 1});
+        }
+      }
     }
  
   }
 
+  restart = () => {
+    this.setState({sec : '00'});
+    this.setState({min : this.state.mlen});
+  }
+
+  // componentDidMount() {
+  //   this.interval = setInterval(() => this.start(), 1000);
+    
+  // }
+  // () => this.setState({ sec: this.state.sec - 1 })
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   render() {
     return (
@@ -100,8 +129,8 @@ class App extends Component {
 
           </div>
           <div id='button-box'>
-            <div id='start_stop' className='buttons' onClick={this.start}><span class="material-symbols-outlined" id='play_pause-icon'>play_pause</span></div>
-            <div id='reset' className='buttons'><span class="material-symbols-outlined">restart_alt</span></div>
+            <div id='start_stop' className='buttons' onClick={this.onpower}><span class="material-symbols-outlined" id='play_pause-icon'>play_pause</span></div>
+            <div id='reset' className='buttons' onClick={this.restart}><span class="material-symbols-outlined">restart_alt</span></div>
           </div>
           <div id='by-box'>
           Designed and Coded by Pratham-_-
