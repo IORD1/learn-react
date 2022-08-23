@@ -140,13 +140,17 @@ body{
   #by-box{
     width: 100%;
     height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
     font-family: 'Silkscreen', cursive;
     font-size: 12px;
     font-weight: 300;
+    text-align: center;
+  }
+
+  #by-box a{
+    color: aqua;
+    text-decoration: none;
+    font-size: 14px;
   }
   
   
