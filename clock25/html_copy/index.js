@@ -76,7 +76,15 @@ function onpower(){
 }
 
 
-
+function checkermin(){
+  if(min == 10){
+    return true;
+  }
+  if(min == 1){
+    return true;
+  }
+  return String(Math.abs(min)).charAt(0) == min;
+}
 
 
 function checker(){
@@ -93,8 +101,12 @@ function start () {
   if(power == 1){
     if(sec == '00'){
       if(min == 0 && sec == 0){
-        if(isbreak == 0){
-          min = blen - 1;
+        if(isbreak == 0 && blen != 0){
+          if(checkermin()){
+            min = '0' + (blen-1);
+          }else{
+            min = blen - 1;
+          }
           document.getElementById("time-left-min").innerHTML = min;
           sec = 59 ;
           document.getElementById("time-left-sec").innerHTML = sec;
@@ -113,11 +125,26 @@ function start () {
           document.getElementById("timer-label").innerHTML = display;
           var audio1 = document.getElementById('beep');
           audio1.play();
+        }else if(isbreak == 0){
+          min = mlen;
+          document.getElementById("time-left-min").innerHTML = min;
+          sec = '00' ;
+          document.getElementById("time-left-sec").innerHTML = sec;
+          isbreak = 0;
+          display= 'Session'
+          document.getElementById("timer-label").innerHTML = display;
+          var audio1 = document.getElementById('beep');
+          audio1.play();
         }
         
       }else{
-        min = min - 1;
-        document.getElementById("time-left-min").innerHTML = min;
+        if(checkermin()){
+          min = '0' + (min -1);
+          document.getElementById("time-left-min").innerHTML = min;
+        }else{
+          min = minSession - 1;
+          document.getElementById("time-left-min").innerHTML = min;
+        }
         sec = 59;
         document.getElementById("time-left-sec").innerHTML = sec;
       }
@@ -139,9 +166,13 @@ function start () {
 function restart () {
   sec = '00';
   document.getElementById("time-left-sec").innerHTML = sec;
-  min = mlen;
+  min = 25;
+  mlen = 25;
   document.getElementById("time-left-min").innerHTML = mlen;
   power = 0;
+  blen = 5;
+  document.getElementById("break-length").innerHTML = blen;
+  document.getElementById("session-length").innerHTML = min;
 }
 
 
